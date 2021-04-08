@@ -75,3 +75,6 @@ C:\Users\EvinW\Documents\MSSA\SportsStore\EvinsEliteSports\obj\Debug\net5.0\Razo
 C:\Users\EvinW\Documents\MSSA\SportsStore\EvinsEliteSports\obj\Debug\net5.0\Razor\Pages\_CartLayout.cshtml.g.cs
 C:\Users\EvinW\Documents\MSSA\SportsStore\EvinsEliteSports\obj\Debug\net5.0\Razor\Pages\_ViewImports.cshtml.g.cs
 C:\Users\EvinW\Documents\MSSA\SportsStore\EvinsEliteSports\obj\Debug\net5.0\Razor\Pages\_ViewStart.cshtml.g.cs
+C:\Users\EvinW\Documents\MSSA\SportsStore\EvinsEliteSports\obj\Debug\net5.0\Razor\Views\Shared\Components\CartSummary\Default.cshtml.g.cs
+C:\Users\EvinW\Documents\MSSA\SportsStore\EvinsEliteSports\obj\Debug\net5.0\Razor\Views\Order\Checkout.cshtml.g.cs
+C:\Users\EvinW\Documents\MSSA\SportsStore\EvinsEliteSports\obj\Debug\net5.0\Razor\Pages\Completed.cshtml.g.cs
