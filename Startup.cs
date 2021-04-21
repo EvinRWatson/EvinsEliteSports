@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using EvinsEliteSports.Models;
 
 namespace EvinsEliteSports
@@ -41,6 +42,12 @@ namespace EvinsEliteSports
             services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddServerSideBlazor();
+
+            services.AddDbContext<AppIdentityDbContext>(options =>
+                options.UseSqlServer(
+                Configuration["ConnectionStrings:IdentityConnection"]));
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<AppIdentityDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,6 +58,9 @@ namespace EvinsEliteSports
             app.UseStaticFiles();
             app.UseSession();
             app.UseRouting();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
@@ -73,6 +83,7 @@ namespace EvinsEliteSports
                 endpoints.MapFallbackToPage("/admin/{*catchall}", "/Admin/Index");
             });
             SeedData.EnsurePopulated(app);
+            IdentitySeedData.EnsurePopulated(app);
         }
     }
 }
