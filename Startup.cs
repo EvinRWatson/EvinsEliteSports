@@ -45,7 +45,7 @@ namespace EvinsEliteSports
 
             services.AddDbContext<AppIdentityDbContext>(options =>
                 options.UseSqlServer(
-                Configuration["ConnectionStrings:IdentityConnection"]));
+                        Configuration["ConnectionStrings:IdentityConnection"]));
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<AppIdentityDbContext>();
         }
